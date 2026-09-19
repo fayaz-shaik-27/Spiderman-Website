@@ -1,0 +1,431 @@
+/* ==========================================================================
+   Spider-Man: Brand New Day - Exact Kinetic Typography & Three.js 3D Web Styles
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@700;900&family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+:root {
+    --bg-dark: #0d1724;
+    --card-bg: #142233;
+    --spider-red: #E50914;
+    --spider-gold: #FFC857;
+    --spider-cyan: #00F0FF;
+    --text-light: #F8FAFC;
+    --text-muted: #8E9AAF;
+
+    --font-heading: 'Bebas Neue', sans-serif;
+    --font-gold: 'Cinzel', serif;
+    --font-script: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Three.js 3D Web Canvas Container */
+#web-3d-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#web-3d-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Spider Cursor Reticle */
+.spider-cursor {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--spider-red);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px var(--spider-red);
+}
+
+/* SECTION 1: HERO LANDING (BRAND NEW DAY) */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hero-card-wrapper {
+    position: relative;
+    width: 680px;
+    height: 420px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+.poster-graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.poster-svg-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-title-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-subtext {
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: -10px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Giant Red 3D Text Overlay */
+.hero-main-title {
+    font-family: var(--font-heading);
+    font-size: 7.5rem;
+    line-height: 0.9;
+    color: var(--spider-red);
+    letter-spacing: 4px;
+    text-shadow: 
+        0 1px 0 #800000,
+        0 2px 0 #700000,
+        0 3px 0 #600000,
+        0 4px 0 #500000,
+        0 5px 0 #400000,
+        0 6px 0 #300000,
+        0 8px 25px rgba(0, 0, 0, 0.9);
+    margin: 5px 0;
+}
+
+.hero-gold-text {
+    font-family: var(--font-gold);
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--spider-gold);
+    text-shadow: 0 0 20px rgba(255, 200, 87, 0.6);
+}
+
+/* SECTION 2: NEEDLESS & LANDING PAGE */
+.section-lyric {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.bg-watermark {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-size: 16rem;
+    color: rgba(255, 255, 255, 0.05);
+    letter-spacing: 12px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.lyric-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.lyric-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.lyric-sub {
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+/* SECTION 3: SHE WAS A BAD... */
+.section-badthang {
+    background: radial-gradient(circle at center, rgba(27, 45, 66, 0.7) 0%, rgba(13, 23, 36, 0.9) 100%);
+}
+
+.badthang-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.giant-lyric-text {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    letter-spacing: 4px;
+    color: var(--text-light);
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+.hero-poster-expand {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 2px solid rgba(229, 9, 20, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-inner-graphic {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-face-svg {
+    width: 280px;
+    height: 280px;
+}
+
+/* SECTION 4: BABY, I'M A... WITH INSET CARDS */
+.cards-layout {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+.inset-card {
+    width: 320px;
+    height: 420px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.crowd-img {
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8) 100%), #1d3557;
+}
+
+.gwen-img {
+    background: linear-gradient(180deg, transparent 40%, rgba(229, 9, 20, 0.6) 100%), #e63946;
+}
+
+.card-label {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    position: relative;
+    z-index: 2;
+}
+
+.center-lyric {
+    text-align: center;
+}
+
+.lyric-bold-text {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    letter-spacing: 4px;
+    color: var(--text-light);
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
+}
+
+/* SECTION 5: PETER AND GWEN Encounter ("BABY, YOU'RE A WRECK") */
+.section-peter-gwen {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 0;
+    background: radial-gradient(circle at center, rgba(23, 42, 58, 0.7) 0%, rgba(13, 23, 36, 0.9) 100%);
+}
+
+.encounter-header {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.encounter-container {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: relative;
+}
+
+.profile-side {
+    width: 380px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+}
+
+.center-web-container {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hanging-web-line {
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(180deg, var(--spider-cyan), #FFF);
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px var(--spider-cyan);
+}
+
+.hanging-spider {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: swingSpider 3s ease-in-out infinite alternate;
+}
+
+@keyframes swingSpider {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+.encounter-lyric {
+    font-family: var(--font-heading);
+    font-size: 4.8rem;
+    letter-spacing: 4px;
+    color: var(--text-light);
+    max-width: 450px;
+    line-height: 1;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
+/* Badges Row */
+.badges-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+
+.badge-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 28px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.badge-item.active,
+.badge-item:hover {
+    background: rgba(229, 9, 20, 0.2);
+    border-color: var(--spider-red);
+    color: var(--text-light);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+}
+
+.badge-icon {
+    font-size: 1.4rem;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+    .hero-card-wrapper {
+        width: 90vw;
+        height: 360px;
+    }
+    .hero-main-title { font-size: 5.5rem; }
+    .encounter-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
